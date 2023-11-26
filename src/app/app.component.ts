@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +14,10 @@ export class AppComponent {
 
   constructor() {
     
+  }
+
+  @HostListener('scroll', ['$event']) private onScroll($event: any): void {
+    console.log($event.srcElement, $event.srcElement.scrollTop);
   }
 
   // clicked(){
